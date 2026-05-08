@@ -1,0 +1,2244 @@
+<!DOCTYPE html>  
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informatics Consultancy Firm — Sierra Leone</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #004080;
+            --white: #ffffff;
+            --off-white: #f8f9fa;
+            --border: #e2e8f0;
+            --text: #000000;
+            --muted: #666666;
+            --shadow: 0 4px 20px rgba(0, 64, 128, 0.12);
+            --shadow-lift: 0 12px 40px rgba(0, 64, 128, 0.20);
+        }
+
+        *, *::before, *::after { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Oswald', Arial, sans-serif;
+            background: var(--off-white);
+            color: var(--text);
+            font-size: 16px;
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        /* HEADER */
+        header {
+            background: var(--white);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid var(--primary-blue);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        
+        .brand-logo {
+            width: 80px;
+            height: 80px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .brand-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .brand-text h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+        }
+        
+        .brand-text p {
+            font-size: 0.95rem;
+            color: var(--muted);
+            font-family: 'Oswald', sans-serif;
+            margin-top: 0.25rem;
+            font-weight: 300;
+        }
+
+        .header-stats {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .hstat {
+            text-align: center;
+            border-left: 2px solid var(--border);
+            padding-left: 1.5rem;
+        }
+        
+        .hstat:first-child { 
+            border-left: none; 
+            padding-left: 0; 
+        }
+        
+        .hstat-num {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            line-height: 1;
+        }
+        
+        .hstat-label {
+            font-size: 0.75rem;
+            color: var(--muted);
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 0.25rem;
+            font-weight: 400;
+        }
+
+        /* NAVIGATION */
+        nav {
+            background: var(--primary-blue);
+            position: sticky;
+            top: 0;
+            z-index: 500;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+        }
+        
+        .nav-tab {
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            color: rgba(255,255,255,0.85);
+            padding: 1rem 1.75rem;
+            border: none;
+            background: none;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            white-space: nowrap;
+        }
+        
+        .nav-tab:hover {
+            color: var(--white);
+            background: rgba(255,255,255,0.1);
+        }
+        
+        .nav-tab.active {
+            color: var(--white);
+            border-bottom-color: var(--white);
+            background: rgba(255,255,255,0.15);
+        }
+
+        .mobile-nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            padding: 1rem;
+            cursor: pointer;
+        }
+
+        /* PAGE SECTIONS */
+        .page-section {
+            display: none;
+            min-height: 80vh;
+        }
+        
+        .page-section.active {
+            display: block;
+            animation: fadeIn 0.4s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        /* SECTION TITLE */
+        .section-title-bar {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 1.5rem 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        
+        .sbar-text h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+        
+        .sbar-text p {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.8);
+            margin-top: 0.25rem;
+            font-weight: 300;
+        }
+
+        /* HOME HERO */
+        .home-hero {
+            background: var(--primary-blue);
+            position: relative;
+            overflow: hidden;
+            padding: 5rem 2rem;
+        }
+        
+        .home-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 20px,
+                rgba(255,255,255,0.03) 20px,
+                rgba(255,255,255,0.03) 21px
+            );
+        }
+        
+        .home-hero-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-content {
+            max-width: 1000px;
+        }
+        
+        .hero-content .kicker {
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+        
+        .hero-content h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.1;
+            letter-spacing: -1px;
+            margin-bottom: 2rem;
+        }
+        
+        .hero-content p {
+            color: rgba(255,255,255,0.95);
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 1.8rem;
+            font-weight: 300;
+            text-align: justify;
+        }
+        
+        .hero-content p strong {
+            color: var(--white);
+            font-weight: 600;
+        }
+        
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2.5rem;
+        }
+        
+        .btn {
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            padding: 1rem 2rem;
+            border-radius: 6px;
+            border: 2px solid;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        
+        .btn-white {
+            background: var(--white);
+            border-color: var(--white);
+            color: var(--primary-blue);
+        }
+        
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border-color: rgba(255,255,255,0.5);
+            color: var(--white);
+        }
+        
+        .btn-outline:hover {
+            border-color: var(--white);
+            background: rgba(255,255,255,0.1);
+        }
+
+        .btn-blue {
+            background: var(--primary-blue);
+            border-color: var(--primary-blue);
+            color: var(--white);
+        }
+        
+        .btn-blue:hover {
+            background: #0056b3;
+            border-color: #0056b3;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        /* ABOUT CARDS */
+        .about-strip {
+            background: var(--white);
+            border-top: 3px solid var(--primary-blue);
+            padding: 3rem 2rem;
+        }
+        
+        .about-strip-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+        
+        .about-card {
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            padding: 2rem;
+            transition: all 0.3s;
+            background: var(--white);
+            cursor: pointer;
+        }
+        
+        .about-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lift);
+            border-color: var(--primary-blue);
+        }
+        
+        .about-card h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 0.75rem;
+        }
+        
+        .about-card p {
+            font-size: 1rem;
+            color: var(--muted);
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        /* ABOUT CONTENT */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        
+        .about-text h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.75rem;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid var(--primary-blue);
+            padding-bottom: 0.75rem;
+            display: inline-block;
+        }
+        
+        .about-text p {
+            font-size: 1.05rem;
+            color: var(--text);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            text-align: justify;
+        }
+        
+        .about-list {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+        
+        .about-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 1.05rem;
+            color: var(--text);
+        }
+        
+        .about-info-card {
+            background: var(--primary-blue);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .info-card-header {
+            background: #003060;
+            padding: 1.5rem 2rem;
+            border-bottom: 3px solid var(--white);
+        }
+        
+        .info-card-header h4 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+            color: var(--white);
+            font-weight: 600;
+        }
+        
+        .info-card-body {
+            padding: 2rem;
+        }
+        
+        .info-row {
+            display: flex;
+            align-items: flex-start;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .info-row:last-child { border-bottom: none; }
+        
+        .info-row-text h5 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+            color: rgba(255,255,255,0.6);
+            text-transform: uppercase;
+            margin-bottom: 0.25rem;
+            font-weight: 600;
+        }
+        
+        .info-row-text p {
+            font-size: 1rem;
+            color: var(--white);
+            font-weight: 300;
+        }
+
+        /* SERVICES */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: var(--white);
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .service-card:hover {
+            border-color: var(--primary-blue);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lift);
+        }
+        
+        .sc-head {
+            background: var(--primary-blue);
+            padding: 2rem 1.5rem;
+            position: relative;
+        }
+        
+        .sc-head h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            color: var(--white);
+            font-weight: 600;
+        }
+        
+        .sc-body {
+            padding: 1.5rem;
+            flex: 1;
+        }
+        
+        .sc-body p {
+            font-size: 1rem;
+            color: var(--muted);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+        
+        .sc-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .tag {
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            padding: 0.35rem 0.85rem;
+            border-radius: 4px;
+            background: var(--off-white);
+            color: var(--primary-blue);
+            border: 1px solid var(--border);
+            font-weight: 500;
+        }
+
+        /* PROJECT GALLERY STYLES */
+        .project-section-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+            border-bottom: 3px solid var(--border);
+            padding-bottom: 1rem;
+        }
+
+        .project-tab {
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            padding: 0.75rem 1.5rem;
+            border: 2px solid transparent;
+            background: transparent;
+            color: var(--muted);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 6px 6px 0 0;
+        }
+
+        .project-tab:hover {
+            color: var(--primary-blue);
+            border-bottom: 3px solid var(--primary-blue);
+        }
+
+        .project-tab.active {
+            color: var(--white);
+            background: var(--primary-blue);
+            border-color: var(--primary-blue);
+        }
+
+        .project-section-content {
+            display: none;
+        }
+
+        .project-section-content.active {
+            display: block;
+            animation: fadeIn 0.4s ease;
+        }
+
+        /* DATA SCIENCE PROJECTS */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .gallery-item {
+            background: var(--white);
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .gallery-item:hover {
+            border-color: var(--primary-blue);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lift);
+        }
+
+        /* IMPLEMENTED PROJECTS */
+        .implemented-projects-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+
+        .implemented-project-card {
+            background: var(--white);
+            border: 3px double var(--primary-blue);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0, 64, 128, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .implemented-project-card:hover {
+            box-shadow: var(--shadow-lift);
+            transform: translateY(-3px);
+        }
+
+        .project-header {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 2rem;
+            border-bottom: 3px solid var(--border);
+        }
+
+        .project-header h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        .project-year {
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-body {
+            padding: 2rem;
+        }
+
+        .project-overview {
+            margin-bottom: 2rem;
+        }
+
+        .project-overview h4 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            color: var(--primary-blue);
+            margin-bottom: 0.75rem;
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+            font-weight: 600;
+        }
+
+        .project-overview p {
+            font-size: 1rem;
+            color: var(--text);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        .project-icf-role {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e7f3ff 100%);
+            border-left: 4px solid var(--primary-blue);
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin-bottom: 2rem;
+        }
+
+        .project-icf-role h4 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1rem;
+            color: var(--primary-blue);
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .project-icf-role p {
+            font-size: 0.95rem;
+            color: var(--text);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .project-icf-role ul {
+            list-style: none;
+            margin: 0.75rem 0 0 0;
+            padding: 0;
+        }
+
+        .project-icf-role li {
+            font-size: 0.95rem;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .project-icf-role li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary-blue);
+            font-weight: bold;
+        }
+
+        .project-gallery {
+            margin-top: 2rem;
+        }
+
+        .project-gallery h4 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1rem;
+            color: var(--primary-blue);
+            margin-bottom: 1.25rem;
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+            font-weight: 600;
+        }
+
+        .project-images-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .project-image-item {
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            background: #f8f9fa;
+        }
+
+        .project-image-item:hover {
+            border-color: var(--primary-blue);
+            box-shadow: 0 6px 16px rgba(0, 64, 128, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .project-image-container {
+            width: 100%;
+            aspect-ratio: 4/3;
+            background: linear-gradient(145deg, #e6f0ff, #b3c7e6);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 3px solid var(--primary-blue);
+        }
+
+        .project-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-image-caption {
+            padding: 0.75rem;
+            text-align: center;
+            background: var(--white);
+        }
+
+        .project-image-caption p {
+            font-size: 0.85rem;
+            color: var(--muted);
+            margin: 0;
+            font-weight: 400;
+        }
+
+        /* GALLERY FILTER */
+        .gallery-filter {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+        }
+        
+        .gfilter-btn {
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            padding: 0.65rem 1.5rem;
+            border: 2px solid var(--border);
+            border-radius: 6px;
+            background: var(--white);
+            color: var(--muted);
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        
+        .gfilter-btn:hover,
+        .gfilter-btn.active {
+            border-color: var(--primary-blue);
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+
+        .gallery-intro {
+            font-size: 1.05rem;
+            color: var(--muted);
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--primary-blue);
+            padding-left: 1.5rem;
+            font-weight: 400;
+        }
+
+        /* CONTACT */
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 3rem;
+        }
+        
+        .contact-info-block h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.75rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            border-bottom: 3px solid var(--primary-blue);
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+        
+        .contact-info-block > p {
+            color: var(--muted);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+        
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            padding: 1.25rem;
+            background: var(--white);
+            border: 2px solid var(--border);
+            border-left: 5px solid var(--primary-blue);
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .contact-detail:hover {
+            transform: translateX(5px);
+            box-shadow: var(--shadow);
+        }
+        
+        .cd-text h5 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 0.35rem;
+            font-weight: 600;
+        }
+        
+        .cd-text p {
+            font-size: 1rem;
+            color: var(--text);
+            font-weight: 400;
+        }
+
+        .form-wrapper {
+            background: var(--white);
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .form-head {
+            background: var(--primary-blue);
+            padding: 1.5rem 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .form-head h4 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.25rem;
+            color: var(--white);
+            font-weight: 600;
+        }
+        
+        .form-body {
+            padding: 2rem;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+        
+        .form-group label {
+            display: block;
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.9rem 1.25rem;
+            border: 2px solid var(--border);
+            border-radius: 6px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1rem;
+            color: var(--text);
+            background: var(--off-white);
+            transition: all 0.3s;
+            font-weight: 400;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            background: var(--white);
+            box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* MODAL */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 900;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-overlay.open {
+            display: flex;
+            animation: modalFadeIn 0.3s ease;
+        }
+        
+        @keyframes modalFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .modal-box {
+            background: var(--white);
+            width: 95vw;
+            height: 95vh;
+            max-width: 1400px;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+            border: 3px solid var(--primary-blue);
+            animation: modalSlideIn 0.35s ease;
+        }
+        
+        @keyframes modalSlideIn {
+            from { transform: scale(0.96) translateY(-20px); opacity: 0; }
+            to { transform: scale(1) translateY(0); opacity: 1; }
+        }
+        
+        .modal-head {
+            background: var(--primary-blue);
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 3px solid var(--white);
+            flex-shrink: 0;
+        }
+        
+        .modal-head-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--white);
+        }
+        
+        .modal-head-actions {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+        }
+        
+        .modal-action-btn {
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.85rem;
+            padding: 0.6rem 1.25rem;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .btn-open-tab {
+            background: var(--white);
+            color: var(--primary-blue);
+        }
+        
+        .btn-open-tab:hover {
+            background: var(--off-white);
+        }
+        
+        .btn-close-modal {
+            background: rgba(255,255,255,0.1);
+            color: var(--white);
+            font-size: 1.1rem;
+            padding: 0.6rem 1rem;
+        }
+        
+        .btn-close-modal:hover {
+            background: rgba(255,100,100,0.3);
+        }
+        
+        .modal-iframe {
+            flex: 1;
+            border: none;
+            width: 100%;
+        }
+        
+        .modal-loading {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            gap: 1.5rem;
+        }
+        
+        .spin {
+            width: 50px;
+            height: 50px;
+            border: 4px solid var(--border);
+            border-top-color: var(--primary-blue);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--primary-blue);
+            border-top: 3px solid var(--white);
+            padding: 1rem 2rem;
+        }
+        
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .footer-left p,
+        .footer-right p {
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.7);
+            font-weight: 400;
+            margin: 0;
+        }
+        
+        .footer-center {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .footer-center a {
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 400;
+        }
+        
+        .footer-center a:hover {
+            color: var(--white);
+        }
+        
+        .footer-divider {
+            color: rgba(255,255,255,0.4);
+            font-size: 0.85rem;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1100px) {
+            .project-images-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .services-grid, .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .about-strip-inner {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            .contact-layout {
+                grid-template-columns: 1fr;
+            }
+            .header-stats {
+                display: none;
+            }
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: flex-start;
+                padding: 1.25rem;
+            }
+            
+            .brand {
+                width: 100%;
+            }
+            
+            .brand-logo {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .brand-text h1 {
+                font-size: 1.25rem;
+            }
+            
+            .brand-text p {
+                font-size: 0.85rem;
+            }
+            
+            .section-inner {
+                padding: 2rem 1.25rem;
+            }
+            
+            .services-grid, .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-strip-inner {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-content p {
+                font-size: 1rem;
+                text-align: left;
+            }
+            
+            .nav-inner {
+                flex-wrap: wrap;
+                justify-content: flex-start;
+            }
+            
+            .nav-tab {
+                padding: 0.85rem 1.25rem;
+                font-size: 0.85rem;
+                flex: 1 1 auto;
+            }
+            
+            .mobile-nav-toggle {
+                display: flex;
+                margin-left: auto;
+            }
+            
+            .nav-inner.collapsed .nav-tab:not(.active) {
+                display: none;
+            }
+            
+            .footer-center {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .footer-divider {
+                display: none;
+            }
+
+            .project-images-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="brand">
+        <div class="brand-logo">
+            <img src="ICF-SL.jpg" alt="ICF Logo">
+        </div>
+        <div class="brand-text">
+            <h1>Informatics Consultancy Firm</h1>
+            <p>Data-Driven Solutions for Health and Development — Sierra Leone</p>
+        </div>
+    </div>
+    <div class="header-stats">
+        <div class="hstat">
+            <div class="hstat-num">50+</div>
+            <div class="hstat-label">Staff</div>
+        </div>
+        <div class="hstat">
+            <div class="hstat-num">10+</div>
+            <div class="hstat-label">Projects</div>
+        </div>
+        <div class="hstat">
+            <div class="hstat-num">2+</div>
+            <div class="hstat-label">Years</div>
+        </div>
+        <div class="hstat">
+            <div class="hstat-num">6</div>
+            <div class="hstat-label">Tools Built</div>
+        </div>
+    </div>
+</header>
+
+<!-- NAVIGATION -->
+<nav>
+    <div class="nav-inner" id="navInner">
+        <button class="nav-tab active" onclick="navigate('home')" data-section="home">
+            Home
+        </button>
+        <button class="nav-tab" onclick="navigate('about')" data-section="about">
+            About ICF
+        </button>
+        <button class="nav-tab" onclick="navigate('services')" data-section="services">
+            Services
+        </button>
+        <button class="nav-tab" onclick="navigate('gallery')" data-section="gallery">
+            Projects
+        </button>
+        <button class="nav-tab" onclick="navigate('images')" data-section="images">
+            Images
+        </button>
+        <button class="nav-tab" onclick="navigate('tools')" data-section="tools">
+            Software Tools
+        </button>
+        <button class="nav-tab" onclick="navigate('contact')" data-section="contact">
+            Contact
+        </button>
+        <button class="mobile-nav-toggle" id="mobileToggle" onclick="toggleMobileNav()">
+            ☰
+        </button>
+    </div>
+</nav>
+
+<!-- HOME SECTION -->
+<div class="page-section active" id="section-home">
+    <div class="home-hero">
+        <div class="home-hero-inner">
+            <div class="hero-content">
+                <div class="kicker">
+                    Sierra Leone — West Africa
+                </div>
+                <h1>Transforming Data into Strategic Intelligence</h1>
+                
+                <p><strong>INFORMATICS CONSULTANCY FIRM – SIERRA LEONE (ICF-SL)</strong>, established in 2023, is a health informatics company duly registered and operating in the Republic of Sierra Leone, specializing in health information systems, data analytics, malaria surveillance, and digital health solutions, with its principal office located in Freetown, Sierra Leone.</p>
+                
+                <p>ICF-SL possesses specialized expertise in health informatics, DHIS2 implementation, malaria epidemiology, data science, and the development of digital health solutions tailored to the needs of National Malaria Programmes and other health sector stakeholders.</p>
+                
+                <p>Since our establishment in 2023, ICF-SL has successfully delivered critical technical assistance to the National Malaria Control Programme (NMCP), demonstrating proven capability and establishing a foundation of trust and collaboration. Our multidisciplinary team of statisticians, data scientists, epidemiologists, and software engineers delivers cutting-edge solutions that drive evidence-based decision-making across Sierra Leone and West Africa.</p>
+                
+                <div class="hero-actions">
+                    <button class="btn btn-white" onclick="navigate('gallery')">
+                        View Our Projects
+                    </button>
+                    <button class="btn btn-outline" onclick="navigate('tools')">
+                        Explore Tools
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="about-strip">
+        <div class="about-strip-inner">
+            <div class="about-card" onclick="navigate('services')">
+                <h3>Predictive Analytics</h3>
+                <p>Advanced ML models for forecasting, risk assessment and strategic planning.</p>
+            </div>
+            <div class="about-card" onclick="navigate('services')">
+                <h3>Geospatial Analysis</h3>
+                <p>Mapping, spatial modeling and GIS-based decision support systems.</p>
+            </div>
+            <div class="about-card" onclick="navigate('services')">
+                <h3>Health Analytics</h3>
+                <p>Epidemiological modeling, disease surveillance and public health data.</p>
+            </div>
+            <div class="about-card" onclick="navigate('services')">
+                <h3>Training & Capacity</h3>
+                <p>R, Python and data science workshops for organizations.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ABOUT SECTION -->
+<div class="page-section" id="section-about">
+    <div class="section-inner">
+        <div class="section-title-bar">
+            <div class="sbar-text">
+                <h2>About Informatics Consultancy Firm</h2>
+                <p>Premier health informatics company based in Sierra Leone</p>
+            </div>
+        </div>
+        <div class="about-grid">
+            <div class="about-text">
+                <h3>Who We Are</h3>
+                <p><strong>INFORMATICS CONSULTANCY FIRM – SIERRA LEONE (ICF-SL)</strong>, established in 2023, is a health informatics company duly registered and operating in the Republic of Sierra Leone, specializing in health information systems, data analytics, malaria surveillance, and digital health solutions, with its principal office located in Freetown, Sierra Leone.</p>
+                
+                <p>ICF-SL possesses specialized expertise in health informatics, DHIS2 implementation, malaria epidemiology, data science, and the development of digital health solutions tailored to the needs of National Malaria Programmes and other health sector stakeholders.</p>
+                
+                <p>Since our establishment in 2023, ICF-SL has successfully delivered critical technical assistance to the National Malaria Control Programme (NMCP), demonstrating proven capability and establishing a foundation of trust and collaboration. Our multidisciplinary team of statisticians, data scientists, epidemiologists, and software engineers delivers cutting-edge solutions that drive evidence-based decision-making across Sierra Leone and West Africa.</p>
+                
+                <ul class="about-list">
+                    <li>✓ Advanced machine learning and statistical modeling</li>
+                    <li>✓ DHIS2 implementation and health information systems strengthening</li>
+                    <li>✓ Malaria surveillance and epidemiological analytics</li>
+                    <li>✓ Custom software and digital health solutions</li>
+                    <li>✓ Geospatial analysis and GIS dashboards</li>
+                    <li>✓ Capacity building and training programs (R & Python)</li>
+                </ul>
+            </div>
+            <div>
+                <div class="about-info-card">
+                    <div class="info-card-header">
+                        <h4>Organisation Profile</h4>
+                    </div>
+                    <div class="info-card-body">
+                        <div class="info-row">
+                            <div class="info-row-text">
+                                <h5>Organisation</h5>
+                                <p>Informatics Consultancy Firm (ICF-SL)</p>
+                            </div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-row-text">
+                                <h5>Established</h5>
+                                <p>2023</p>
+                            </div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-row-text">
+                                <h5>Location</h5>
+                                <p>Freetown, Sierra Leone, West Africa</p>
+                            </div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-row-text">
+                                <h5>Team Size</h5>
+                                <p>50+ expert analysts and scientists</p>
+                            </div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-row-text">
+                                <h5>Specialisation</h5>
+                                <p>Health Informatics, Data Science, Malaria Surveillance</p>
+                            </div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-row-text">
+                                <h5>Email</h5>
+                                <p>info@informaticsconsultancyfirm.com</p>
+                            </div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-row-text">
+                                <h5>Phone</h5>
+                                <p>+232 76 114224</p>
+                            </div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-row-text">
+                                <h5>Core Technologies</h5>
+                                <p>DHIS2, R, Python, GIS, TensorFlow, SQL</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SERVICES SECTION -->
+<div class="page-section" id="section-services">
+    <div class="section-inner">
+        <div class="section-title-bar">
+            <div class="sbar-text">
+                <h2>Services We Provide</h2>
+                <p>Comprehensive health informatics and data science solutions</p>
+            </div>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="sc-head">
+                    <h3>Health Information Systems & DHIS2</h3>
+                </div>
+                <div class="sc-body">
+                    <p>Expert DHIS2 implementation, customization, and support for health programs, including NMCP and other disease control initiatives.</p>
+                    <div class="sc-tags">
+                        <span class="tag">DHIS2</span>
+                        <span class="tag">HMIS</span>
+                        <span class="tag">Integration</span>
+                    </div>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="sc-head">
+                    <h3>Malaria Surveillance & Epidemiology</h3>
+                </div>
+                <div class="sc-body">
+                    <p>Specialized analytics for malaria control programs, including test positivity rates, incidence mapping, and intervention targeting.</p>
+                    <div class="sc-tags">
+                        <span class="tag">Malaria</span>
+                        <span class="tag">Epi Analysis</span>
+                        <span class="tag">NMCP</span>
+                    </div>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="sc-head">
+                    <h3>Predictive Analytics & Machine Learning</h3>
+                </div>
+                <div class="sc-body">
+                    <p>Advanced ML models for forecasting disease trends, risk stratification, and strategic planning across health and development sectors.</p>
+                    <div class="sc-tags">
+                        <span class="tag">Random Forest</span>
+                        <span class="tag">Neural Networks</span>
+                        <span class="tag">Time Series</span>
+                    </div>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="sc-head">
+                    <h3>Digital Health Solutions</h3>
+                </div>
+                <div class="sc-body">
+                    <p>Custom digital tools, mobile applications, and web-based platforms designed for health workers, data managers, and program leaders.</p>
+                    <div class="sc-tags">
+                        <span class="tag">Web Apps</span>
+                        <span class="tag">Mobile</span>
+                        <span class="tag">Dashboard</span>
+                    </div>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="sc-head">
+                    <h3>Geospatial Analysis & GIS</h3>
+                </div>
+                <div class="sc-body">
+                    <p>Spatial data processing, health facility mapping, catchment area modeling, and geographic targeting for intervention planning.</p>
+                    <div class="sc-tags">
+                        <span class="tag">ArcGIS</span>
+                        <span class="tag">QGIS</span>
+                        <span class="tag">Leaflet</span>
+                    </div>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="sc-head">
+                    <h3>Training & Capacity Building</h3>
+                </div>
+                <div class="sc-body">
+                    <p>Custom training programs in DHIS2, data analytics, R, Python, and health informatics for ministries, NGOs, and health partners.</p>
+                    <div class="sc-tags">
+                        <span class="tag">R</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">DHIS2</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- GALLERY SECTION (PROJECTS) -->
+<div class="page-section" id="section-gallery">
+    <div class="section-inner">
+        <div class="section-title-bar">
+            <div class="sbar-text">
+                <h2>Projects & Portfolio</h2>
+                <p>Data science innovations and field implementations</p>
+            </div>
+        </div>
+
+        <!-- Project Section Tabs -->
+        <div class="project-section-tabs">
+            <button class="project-tab active" onclick="switchProjectTab('datascience')">Data Science Projects</button>
+            <button class="project-tab" onclick="switchProjectTab('implemented')">Implemented Projects</button>
+        </div>
+
+        <!-- DATA SCIENCE PROJECTS -->
+        <div class="project-section-content active" id="datascience-section">
+            <p class="gallery-intro">Browse through our collection of successful health informatics and data science projects developed since 2023. Click on any project to view it live.</p>
+            
+            <div class="gallery-filter">
+                <button class="gfilter-btn active" onclick="filterGallery('all', this)">All Projects</button>
+                <button class="gfilter-btn" onclick="filterGallery('health', this)">Health Analytics</button>
+                <button class="gfilter-btn" onclick="filterGallery('ml', this)">Machine Learning</button>
+                <button class="gfilter-btn" onclick="filterGallery('tool', this)">Software Tools</button>
+            </div>
+
+            <div class="gallery-grid">
+                <!-- Project 1 -->
+                <div class="gallery-item" data-cat="health ml" onclick="openModal('https://mohamedsillahkanu.github.io/Hypertension-Dashboard/', 'Hypertension Management System')">
+                    <div class="sc-head">
+                        <h3>Hypertension Management System</h3>
+                    </div>
+                    <div class="sc-body">
+                        <p>Intelligent monitoring and clinical prediction platform for hypertension patients developed for Sierra Leone health facilities.</p>
+                        <div class="sc-tags"><span class="tag">Health Analytics</span><span class="tag">ML</span></div>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="gallery-item" data-cat="health ml" onclick="openModal('https://mohamedsillahkanu.github.io/Heart-Disease/', 'Cardiovascular Disease Prediction')">
+                    <div class="sc-head"><h3>Cardiovascular Disease Prediction</h3></div>
+                    <div class="sc-body"><p>ML-powered risk assessment and early detection system for CVD, supporting NMCP's integrated disease surveillance.</p><div class="sc-tags"><span class="tag">Machine Learning</span><span class="tag">Health</span></div></div>
+                </div>
+                <!-- Project 3 -->
+                <div class="gallery-item" data-cat="health ml" onclick="openModal('https://mohamedsillahkanu.github.io/Diabetes-dashboard/', 'Diabetes Analytics Platform')">
+                    <div class="sc-head"><h3>Diabetes Analytics Platform</h3></div>
+                    <div class="sc-body"><p>Comprehensive diabetes management and real-time monitoring dashboard for chronic disease surveillance.</p><div class="sc-tags"><span class="tag">Health</span><span class="tag">Dashboard</span></div></div>
+                </div>
+                <!-- Project 4 -->
+                <div class="gallery-item" data-cat="ml" onclick="openModal('https://mohamedsillahkanu.github.io/colon-cancer/', 'Colon & Lung Cancer CNN')">
+                    <div class="sc-head"><h3>Colon & Lung Cancer CNN</h3></div>
+                    <div class="sc-body"><p>Computer vision model for automated medical image classification, supporting pathology services.</p><div class="sc-tags"><span class="tag">Deep Learning</span><span class="tag">CNN</span></div></div>
+                </div>
+                <!-- Project 5 -->
+                <div class="gallery-item" data-cat="tool" onclick="openModal('https://mohamedsillahkanu.github.io/costing-tool/', 'SNT Costing Tool')">
+                    <div class="sc-head"><h3>SNT Costing Calculator</h3></div>
+                    <div class="sc-body"><p>National malaria intervention costing and planning tool developed for NMCP Sierra Leone.</p><div class="sc-tags"><span class="tag">Software Tool</span><span class="tag">Malaria</span></div></div>
+                </div>
+                <!-- Project 6 -->
+                <div class="gallery-item" data-cat="tool" onclick="openModal('https://mohamedsillahkanu.github.io/sl-nmcp-data-analysis-training-plan/', 'Data Analytics Training')">
+                    <div class="sc-head"><h3>Data Analytics Training in R & Python</h3></div>
+                    <div class="sc-body"><p>Comprehensive NMCP training plan for data analysis, building local capacity in health informatics.</p><div class="sc-tags"><span class="tag">Education</span><span class="tag">R/Python</span></div></div>
+                </div>
+                <!-- Project 7 -->
+                <div class="gallery-item" data-cat="health" onclick="openModal('https://mohamedsillahkanu.github.io/tpr/', 'Test Positivity Rate')">
+                    <div class="sc-head"><h3>Test Positivity Rate Analysis</h3></div>
+                    <div class="sc-body"><p>Malaria test positivity rate computation and geospatial visualization for NMCP surveillance.</p><div class="sc-tags"><span class="tag">Epidemiology</span><span class="tag">Malaria</span></div></div>
+                </div>
+                <!-- Project 8 -->
+                <div class="gallery-item" data-cat="health" onclick="openModal('https://mohamedsillahkanu.github.io/crude-incidence/', 'Crude Incidence Tool')">
+                    <div class="sc-head"><h3>Crude Incidence Calculator</h3></div>
+                    <div class="sc-body"><p>Epidemiological incidence rate computation and trend analysis for disease surveillance.</p><div class="sc-tags"><span class="tag">Epi</span><span class="tag">Calculator</span></div></div>
+                </div>
+                <!-- Project 9 -->
+                <div class="gallery-item" data-cat="health" onclick="openModal('https://mohamedsillahkanu.github.io/heatmap/', 'Reporting Matrix Heatmap')">
+                    <div class="sc-head"><h3>Reporting Matrix & Heatmap</h3></div>
+                    <div class="sc-body"><p>DHIS2 reporting completeness visualization across facilities, improving data quality monitoring.</p><div class="sc-tags"><span class="tag">Reporting</span><span class="tag">DHIS2</span></div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- IMPLEMENTED PROJECTS -->
+        <div class="project-section-content" id="implemented-section">
+            <p class="gallery-intro">Real-world field implementations and strategic partnerships with the National Malaria Control Programme (NMCP) and Ministry of Health and Sanitation.</p>
+            
+            <div class="implemented-projects-grid">
+                <!-- Project 1: School-Based Distribution of ITNs -->
+                <div class="implemented-project-card">
+                    <div class="project-header">
+                        <div class="project-year">2023</div>
+                        <h3>School-Based Distribution of Insecticide-Treated Nets (ITNs)</h3>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-overview">
+                            <h4>Project Overview</h4>
+                            <p>Implemented the School-Based Distribution (SBD) of ITN campaign in Kono District during 2023. This initiative leveraged the school system as a distribution channel to provide insecticide-treated bed nets to school-age children and their households, a critical malaria prevention strategy aligned with WHO recommendations for continuous malaria control in endemic regions.</p>
+                        </div>
+                        <div class="project-icf-role">
+                            <h4>ICF-SL's Role</h4>
+                            <p>In collaboration with NMCP, ICF-SL developed and deployed the complete digital ecosystem for the SBD campaign:</p>
+                            <ul>
+                                <li>Designed and built the ICF Collect PWA (Progressive Web Application) for real-time data collection from schools</li>
+                                <li>Created the ITN Movement App for tracking ITN distribution, stock management, and beneficiary data</li>
+                                <li>Implemented QR-based school tracking system for verification and accountability</li>
+                                <li>Developed staff ID card systems for field team authentication and monitoring</li>
+                                <li>Provided data quality assurance and analytics support throughout the campaign</li>
+                            </ul>
+                        </div>
+                        <div class="project-gallery">
+                            <h4>Project Images</h4>
+                            <div class="project-images-grid">
+                                <div class="project-image-item">
+                                    <div class="project-image-container">
+                                        <img src="sbd-kono-01.jpg" alt="SBD Campaign Kono 2023">
+                                    </div>
+                                    <div class="project-image-caption">
+                                        <p>ITN Distribution in Kono Schools</p>
+                                    </div>
+                                </div>
+                                <div class="project-image-item">
+                                    <div class="project-image-container">
+                                        <img src="sbd-kono-02.jpg" alt="Data Collection Team">
+                                    </div>
+                                    <div class="project-image-caption">
+                                        <p>ICF Collect Training Session</p>
+                                    </div>
+                                </div>
+                                <div class="project-image-item">
+                                    <div class="project-image-container">
+                                        <img src="sbd-kono-03.jpg" alt="QR Tracking System">
+                                    </div>
+                                    <div class="project-image-caption">
+                                        <p>QR-Based School Verification</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Mass ITN Distribution -->
+                <div class="implemented-project-card">
+                    <div class="project-header">
+                        <div class="project-year">2024-2025</div>
+                        <h3>Mass Insecticide-Treated Nets Distribution Campaign</h3>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-overview">
+                            <h4>Project Overview</h4>
+                            <p>Executed large-scale mass ITN distribution campaigns in Bo District (2024) and Bombali District (2025), as well as Port Loko, Koinadugu, Pujehun, and Bonthe districts. These mass campaigns represent a critical malaria prevention strategy targeting universal coverage of vulnerable populations with insecticide-treated bed nets.</p>
+                        </div>
+                        <div class="project-icf-role">
+                            <h4>ICF-SL's Role</h4>
+                            <p>ICF-SL provided comprehensive technical support to NMCP for campaign execution and monitoring:</p>
+                            <ul>
+                                <li>Deployed enhanced ITN Movement App with real-time distribution tracking</li>
+                                <li>Conducted data quality monitoring and validation during campaign operations</li>
+                                <li>Provided daily analytics dashboards for campaign performance tracking</li>
+                                <li>Implemented geographic information systems (GIS) for distribution hotspot analysis</li>
+                                <li>Developed compliance and accountability reporting systems for district teams</li>
+                            </ul>
+                        </div>
+                        <div class="project-gallery">
+                            <h4>Project Images</h4>
+                            <div class="project-images-grid">
+                                <div class="project-image-item">
+                                    <div class="project-image-container">
+                                        <img src="mass-itn-bo-01.jpg" alt="Mass ITN Bo District">
+                                    </div>
+                                    <div class="project-image-caption">
+                                        <p>Mass Distribution Bo District 2024</p>
+                                    </div>
+                                </div>
+                                <div class="project-image-item">
+                                    <div class="project-image-container">
+                                        <img src="mass-itn-bombali-01.jpg" alt="Bombali Distribution">
+                                    </div>
+                                    <div class="project-image-caption">
+                                        <p>Bombali Campaign 2025</p>
+                                    </div>
+                                </div>
+                                <div class="project-image-item">
+                                    <div class="project-image-container">
+                                        <img src="mass-itn-analytics-01.jpg" alt="Analytics Dashboard">
+                                    </div>
+                                    <div class="project-image-caption">
+                                        <p>Real-time Campaign Analytics</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Therapeutic Efficacy Study -->
+                <div class="implemented-project-card">
+                    <div class="project-header">
+                        <div class="project-year">2026</div>
+                        <h3>Therapeutic Efficacy Study (TES) Implementation</h3>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-overview">
+                            <h4>Project Overview</h4>
+                            <p>Supporting the 2026 Therapeutic Efficacy Study, a critical surveillance activity to monitor antimalarial drug effectiveness in Sierra Leone. This study evaluates the efficacy of artemisinin-based combination therapies (ACTs) and other antimalarials through standardized clinical protocols and laboratory testing.</p>
+                        </div>
+                        <div class="project-icf-role">
+                            <h4>ICF-SL's Role</h4>
+                            <p>ICF-SL developed digital tools and analytical support systems for the TES:</p>
+                            <ul>
+                                <li>Built customized TES case record form (CRF) collection tools integrated with offline capability</li>
+                                <li>Created automated data validation and quality control workflows</li>
+                                <li>Developed clinical outcome tracking dashboards for real-time monitoring</li>
+                                <li>Provided statistical analysis and reporting on drug efficacy results</li>
+                                <li>Ensured data security and compliance with research protocols</li>
+                            </ul>
+                        </div>
+                        <div class="project-gallery">
+                            <h4>Project Images</h4>
+                            <div class="project-images-grid">
+                                <div class="project-image-item">
+                                    <div class="project-image-container">
+                                        <img src="tes-01.jpg" alt="TES Clinical Site">
+                                    </div>
+                                    <div class="project-image-caption">
+                                        <p>TES Clinical Site Setup</p>
+                                    </div>
+                                </div>
+                                <div class="project-image-item">
+                                    <div class="project-image-container">
+                                        <img src="tes-02.jpg" alt="Data Collection">
+                                    </div>
+                                    <div class="project-image-caption">
+                                        <p>Patient Monitoring & Data Entry</p>
+                                    </div>
+                                </div>
+                                <div class="project-image-item">
+                                    <div class="project-image-container">
+                                        <img src="tes-03.jpg" alt="Laboratory Testing">
+                                    </div>
+                                    <div class="project-image-caption">
+                                        <p>Laboratory Analysis & Testing</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: National Malaria Data Repository -->
+                <div class="implemented-project-card">
+                    <div class="project-header">
+                        <div class="project-year">2026</div>
+                        <h3>National Malaria Data Repository (NMDR) Establishment</h3>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-overview">
+                            <h4>Project Overview</h4>
+                            <p>Setting up the National Malaria Data Repository (NMDR) on DHIS2 platform, a centralized data warehouse for comprehensive malaria surveillance and analytics. The NMDR consolidates data from routine health information systems, disease surveillance, intervention tracking, and research studies to support evidence-based malaria control programming.</p>
+                        </div>
+                        <div class="project-icf-role">
+                            <h4>ICF-SL's Role</h4>
+                            <p>ICF-SL is the principal technical partner implementing the NMDR infrastructure:</p>
+                            <ul>
+                                <li>Architected the DHIS2-based data repository with scalable infrastructure</li>
+                                <li>Configured metadata, data elements, indicators, and dashboards for malaria analytics</li>
+                                <li>Built data integration pipelines from multiple source systems into the NMDR</li>
+                                <li>Developed advanced analytics dashboards for program monitoring and evaluation</li>
+                                <li>Established data governance frameworks and access controls</li>
+                            </ul>
+                        </div>
+                        <div class="project-gallery">
+                            <h4>Project Images</h4>
+                            <div class="project-images-grid">
+                                <div class="project-image-item">
+                                    <div class="project-image-container">
+                                        <img src="nmdr-architecture-01.jpg" alt="NMDR Architecture">
+                                    </div>
+                                    <div class="project-image-caption">
+                                        <p>NMDR System Architecture</p>
+                                    </div>
+                                </div>
+                                <div class="project-image-item">
+                                    <div class="project-image-container">
+                                        <img src="nmdr-dashboard-01.jpg" alt="Analytics Dashboard">
+                                    </div>
+                                    <div class="project-image-caption">
+                                        <p>Malaria Analytics Dashboard</p>
+                                    </div>
+                                </div>
+                                <div class="project-image-item">
+                                    <div class="project-image-container">
+                                        <img src="nmdr-training-01.jpg" alt="NMDR Training">
+                                    </div>
+                                    <div class="project-image-caption">
+                                        <p>NMDR System Training</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: MOCEM Application in DHIS2 -->
+                <div class="implemented-project-card">
+                    <div class="project-header">
+                        <div class="project-year">2026</div>
+                        <h3>MOCEM Application Development in DHIS2</h3>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-overview">
+                            <h4>Project Overview</h4>
+                            <p>Developing the MOCEM (Mobile Central Epidemiology Management) application within DHIS2 platform to provide real-time disease surveillance and epidemiological monitoring at all administrative levels. MOCEM enables field epidemiologists and program managers to monitor disease trends, investigate outbreaks, and respond promptly to emerging health threats.</p>
+                        </div>
+                        <div class="project-icf-role">
+                            <h4>ICF-SL's Role</h4>
+                            <p>ICF-SL serves as the lead developer for the MOCEM application:</p>
+                            <ul>
+                                <li>Designed and built custom DHIS2 widgets and applications for epidemiological monitoring</li>
+                                <li>Created mobile-first interfaces for field surveillance teams</li>
+                                <li>Implemented real-time data validation and alert mechanisms for outbreak detection</li>
+                                <li>Developed geospatial visualization tools for disease distribution mapping</li>
+                                <li>Built integration with case management and response tracking systems</li>
+                            </ul>
+                        </div>
+                        <div class="project-gallery">
+                            <h4>Project Images</h4>
+                            <div class="project-images-grid">
+                                <div class="project-image-item">
+                                    <div class="project-image-container">
+                                        <img src="mocem-interface-01.jpg" alt="MOCEM Interface">
+                                    </div>
+                                    <div class="project-image-caption">
+                                        <p>MOCEM Mobile Interface</p>
+                                    </div>
+                                </div>
+                                <div class="project-image-item">
+                                    <div class="project-image-container">
+                                        <img src="mocem-mapping-01.jpg" alt="Disease Mapping">
+                                    </div>
+                                    <div class="project-image-caption">
+                                        <p>Geospatial Disease Mapping</p>
+                                    </div>
+                                </div>
+                                <div class="project-image-item">
+                                    <div class="project-image-container">
+                                        <img src="mocem-alerts-01.jpg" alt="Alert System">
+                                    </div>
+                                    <div class="project-image-caption">
+                                        <p>Real-time Alert Dashboard</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6: Sub-National Tailoring (SNT) Analytics Support 2025 -->
+                <div class="implemented-project-card">
+                    <div class="project-header">
+                        <div class="project-year">2025</div>
+                        <h3>Sub-National Tailoring (SNT) Analytics Support</h3>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-overview">
+                            <h4>Project Overview</h4>
+                            <p>Providing comprehensive data analytics support to NMCP for Sub-National Tailoring (SNT) of malaria interventions in 2025. SNT is a strategic approach to customize malaria prevention and control interventions based on local epidemiology, ecology, and operational capacity to maximize program impact and efficiency.</p>
+                        </div>
+                        <div class="project-icf-role">
+                            <h4>ICF-SL's Role</h4>
+                            <p>ICF-SL provides analytical and technical support for SNT implementation:</p>
+                            <ul>
+                                <li>Conducted epidemiological stratification and risk mapping for all districts</li>
+                                <li>Analyzed intervention effectiveness and coverage data by subnational unit</li>
+                                <li>Provided decision-support analytics for intervention selection and targeting</li>
+                                <li>Developed costing models for intervention packages at district level</li>
+                                <li>Created monitoring dashboards for SNT implementation tracking and evaluation</li>
+                            </ul>
+                        </div>
+                        <div class="project-gallery">
+                            <h4>Project Images</h4>
+                            <div class="project-images-grid">
+                                <div class="project-image-item">
+                                    <div class="project-image-container">
+                                        <img src="snt-mapping-01.jpg" alt="Risk Stratification">
+                                    </div>
+                                    <div class="project-image-caption">
+                                        <p>Epidemiological Risk Mapping</p>
+                                    </div>
+                                </div>
+                                <div class="project-image-item">
+                                    <div class="project-image-container">
+                                        <img src="snt-analysis-01.jpg" alt="SNT Analysis">
+                                    </div>
+                                    <div class="project-image-caption">
+                                        <p>SNT Data Analysis Workshop</p>
+                                    </div>
+                                </div>
+                                <div class="project-image-item">
+                                    <div class="project-image-container">
+                                        <img src="snt-decision-01.jpg" alt="Decision Support">
+                                    </div>
+                                    <div class="project-image-caption">
+                                        <p>Intervention Decision Framework</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- IMAGES SECTION -->
+<div class="page-section" id="section-images">
+    <div class="section-inner">
+        <div class="section-title-bar">
+            <div class="sbar-text">
+                <h2>Images Gallery</h2>
+                <p>Visual showcase of our projects, team, and impact since 2023</p>
+            </div>
+        </div>
+        
+        <div style="text-align: center; padding: 2rem; background: #f8f9fa; border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+            <p style="font-size: 1rem; color: var(--muted);">Image gallery coming soon. Check back for photos from our field implementations and team activities.</p>
+        </div>
+    </div>
+</div>
+
+<!-- TOOLS SECTION -->
+<div class="page-section" id="section-tools">
+    <div class="section-inner">
+        <div class="section-title-bar">
+            <div class="sbar-text">
+                <h2>Software Tools We Have Built</h2>
+                <p>Open-source and custom digital health tools for malaria and health programs</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; padding: 3rem 2rem; background: linear-gradient(135deg, #f8f9fa 0%, #e7f3ff 100%); border-radius: 8px; border: 2px solid var(--border);">
+            <p style="font-size: 1.1rem; color: var(--primary-blue); font-weight: 600; margin-bottom: 1rem;">Software Tools Section Coming Soon</p>
+            <p style="font-size: 1rem; color: var(--muted); line-height: 1.8;">Please share the list of software tools with their URLs, and we'll add them to this section. Include tool names, descriptions, and direct links.</p>
+        </div>
+    </div>
+</div>
+
+<!-- CONTACT SECTION -->
+<div class="page-section" id="section-contact">
+    <div class="section-inner">
+        <div class="section-title-bar">
+            <div class="sbar-text">
+                <h2>Get in Touch</h2>
+                <p>Let's discuss how ICF-SL can support your health informatics and analytics needs</p>
+            </div>
+        </div>
+        <div class="contact-layout">
+            <div class="contact-info-block">
+                <h3>Contact Information</h3>
+                <p>Our team is ready to help you transform your health data challenges into strategic opportunities. Reach out to start the conversation.</p>
+                
+                <div class="contact-detail">
+                    <div class="cd-text">
+                        <h5>Head Office</h5>
+                        <p>Freetown, Sierra Leone, West Africa</p>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <div class="cd-text">
+                        <h5>Phone</h5>
+                        <p>+232 76 114224</p>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <div class="cd-text">
+                        <h5>Email</h5>
+                        <p>info@informaticsconsultancyfirm.com</p>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <div class="cd-text">
+                        <h5>LinkedIn</h5>
+                        <p>linkedin.com/in/mohamed-sillah-kanu</p>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <div class="cd-text">
+                        <h5>GitHub</h5>
+                        <p>github.com/mohamedsillahkanu</p>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <div class="cd-text">
+                        <h5>Established</h5>
+                        <p>2023</p>
+                    </div>
+                </div>
+            </div>
+            <div class="form-wrapper">
+                <div class="form-head">
+                    <h4>Send Us a Message</h4>
+                </div>
+                <div class="form-body">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" placeholder="Your full name">
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" placeholder="your@email.com">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Organisation</label>
+                            <input type="text" placeholder="Your organisation">
+                        </div>
+                        <div class="form-group">
+                            <label>Service Interest</label>
+                            <select>
+                                <option value="">Select a service...</option>
+                                <option>Health Information Systems / DHIS2</option>
+                                <option>Malaria Surveillance & Epidemiology</option>
+                                <option>Predictive Analytics & Machine Learning</option>
+                                <option>Digital Health Solutions</option>
+                                <option>Geospatial Analysis & GIS</option>
+                                <option>Training & Capacity Building</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea placeholder="Describe your project or inquiry..."></textarea>
+                    </div>
+                    <button class="btn btn-blue" onclick="submitForm(this)" style="width:100%;justify-content:center;">
+                        Send Message
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-left">
+            <p>Freetown, Sierra Leone | Established 2023</p>
+        </div>
+        <div class="footer-center">
+            <a href="https://www.linkedin.com/in/mohamed-sillah-kanu" target="_blank">LinkedIn</a>
+            <span class="footer-divider">|</span>
+            <a href="tel:+23276114224">+232 76 114224</a>
+            <span class="footer-divider">|</span>
+            <a href="mailto:info@informaticsconsultancyfirm.com">info@informaticsconsultancyfirm.com</a>
+        </div>
+        <div class="footer-right">
+            <p>&copy; 2025 All Rights Reserved</p>
+        </div>
+    </div>
+</footer>
+
+<!-- MODAL VIEWER -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOnOutside(event)">
+    <div class="modal-box">
+        <div class="modal-head">
+            <div class="modal-head-title" id="modalTitle">Project Viewer</div>
+            <div class="modal-head-actions">
+                <a class="modal-action-btn btn-open-tab" id="modalExternalLink" href="#" target="_blank">
+                    Open in New Tab
+                </a>
+                <button class="modal-action-btn btn-close-modal" onclick="closeModal()">
+                    Close
+                </button>
+            </div>
+        </div>
+        <div style="flex:1;display:flex;flex-direction:column;overflow:hidden;">
+            <div class="modal-loading" id="modalLoading">
+                <div class="spin"></div>
+                <p style="font-family:'Oswald',sans-serif;color:var(--muted);letter-spacing:1px;font-size:0.9rem;">LOADING PROJECT</p>
+            </div>
+            <iframe id="modalFrame" class="modal-iframe" src="" style="display:none;"
+                onload="document.getElementById('modalLoading').style.display='none';this.style.display='block';"
+                onerror="document.getElementById('modalLoading').style.display='none';">
+            </iframe>
+        </div>
+    </div>
+</div>
+
+<!-- SCRIPT -->
+<script>
+    // NAVIGATION
+    function navigate(section) {
+        document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
+        const target = document.getElementById('section-' + section);
+        if (target) target.classList.add('active');
+        document.querySelectorAll('.nav-tab[data-section]').forEach(t => {
+            t.classList.toggle('active', t.dataset.section === section);
+        });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        document.getElementById('navInner').classList.remove('mobile-open');
+    }
+
+    function toggleMobileNav() {
+        document.getElementById('navInner').classList.toggle('mobile-open');
+    }
+
+    // PROJECT TABS
+    function switchProjectTab(tabName) {
+        document.querySelectorAll('.project-section-content').forEach(s => s.classList.remove('active'));
+        document.getElementById(tabName + '-section').classList.add('active');
+        document.querySelectorAll('.project-tab').forEach(t => {
+            t.classList.toggle('active', t.getAttribute('onclick').includes(tabName));
+        });
+    }
+
+    // MODAL
+    function openModal(url, title) {
+        const overlay = document.getElementById('modalOverlay');
+        const frame = document.getElementById('modalFrame');
+        const loading = document.getElementById('modalLoading');
+        const titleEl = document.getElementById('modalTitle');
+        const extLink = document.getElementById('modalExternalLink');
+
+        titleEl.textContent = title || 'Project Viewer';
+        extLink.href = url;
+        frame.src = '';
+        frame.style.display = 'none';
+        loading.style.display = 'flex';
+        overlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+
+        setTimeout(() => { frame.src = url; }, 100);
+    }
+
+    function closeModal() {
+        const overlay = document.getElementById('modalOverlay');
+        const frame = document.getElementById('modalFrame');
+        overlay.classList.remove('open');
+        document.body.style.overflow = '';
+        setTimeout(() => { frame.src = ''; frame.style.display = 'none'; }, 300);
+    }
+
+    function closeModalOnOutside(e) {
+        if (e.target === document.getElementById('modalOverlay')) closeModal();
+    }
+
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+    // GALLERY FILTER
+    function filterGallery(cat, btn) {
+        document.querySelectorAll('.gfilter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            const itemCat = item.dataset.cat || '';
+            item.style.display = (cat === 'all' || itemCat.includes(cat)) ? 'block' : 'none';
+        });
+    }
+
+    // FORM
+    function submitForm(btn) {
+        btn.innerHTML = 'Message Sent!';
+        btn.style.opacity = '0.7';
+        setTimeout(() => {
+            btn.innerHTML = 'Send Message';
+            btn.style.opacity = '';
+        }, 3000);
+    }
+
+    // mobile nav
+    document.getElementById('mobileToggle')?.addEventListener('click', function(e){
+        e.stopPropagation();
+        document.getElementById('navInner').classList.toggle('mobile-open');
+    });
+</script>
+</body>
+</html>
