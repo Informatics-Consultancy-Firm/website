@@ -844,6 +844,71 @@
             font-weight: 400;
         }
 
+        /* TOOLS */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+        
+        .tool-card {
+            background: var(--white);
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .tool-card:hover {
+            border-color: var(--primary-blue);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lift);
+        }
+        
+        .tc-head {
+            background: var(--primary-blue);
+            padding: 1.5rem 1rem;
+        }
+        
+        .tc-head h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.95rem;
+            color: var(--white);
+            font-weight: 600;
+        }
+        
+        .tc-body {
+            padding: 1.25rem;
+        }
+        
+        .tc-body p {
+            font-size: 0.9rem;
+            color: var(--muted);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+        
+        .tc-status {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: #10b981;
+            font-weight: 500;
+        }
+        
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #10b981;
+        }
+
         /* CONTACT */
         .contact-layout {
             display: grid;
@@ -2003,10 +2068,79 @@
                 <p>Open-source and custom digital health tools for malaria and health programs</p>
             </div>
         </div>
-
-        <div style="text-align: center; padding: 3rem 2rem; background: linear-gradient(135deg, #f8f9fa 0%, #e7f3ff 100%); border-radius: 8px; border: 2px solid var(--border);">
-            <p style="font-size: 1.1rem; color: var(--primary-blue); font-weight: 600; margin-bottom: 1rem;">Software Tools Section Coming Soon</p>
-            <p style="font-size: 1rem; color: var(--muted); line-height: 1.8;">Please share the list of software tools with their URLs, and we'll add them to this section. Include tool names, descriptions, and direct links.</p>
+        <div class="tools-grid">
+            <div class="tool-card" onclick="openModal('https://mohamedsillahkanu.github.io/dataset-download/', 'DHIS2 Data Extractor')">
+                <div class="tc-head">
+                    <h3>DHIS2 Data Extractor</h3>
+                </div>
+                <div class="tc-body">
+                    <p>Extract routine health data from DHIS2 systems with customizable filters and output formats for NMCP analysis.</p>
+                    <div class="tc-status"><div class="status-dot"></div> Live</div>
+                </div>
+            </div>
+            <div class="tool-card" onclick="openModal('https://mohamedsillahkanu.github.io/combine-files/', 'File Combiner Tool')">
+                <div class="tc-head">
+                    <h3>File Combiner</h3>
+                </div>
+                <div class="tc-body">
+                    <p>Merge and combine multiple data files into a single consolidated dataset for health program analysis.</p>
+                    <div class="tc-status"><div class="status-dot"></div> Live</div>
+                </div>
+            </div>
+            <div class="tool-card" onclick="openModal('https://mohamedsillahkanu.github.io/outlier/', 'Outlier Detection Tool')">
+                <div class="tc-head">
+                    <h3>Outlier Detection</h3>
+                </div>
+                <div class="tc-body">
+                    <p>Statistical outlier identification and handling for DHIS2 routine data quality assurance.</p>
+                    <div class="tc-status"><div class="status-dot"></div> Live</div>
+                </div>
+            </div>
+            <div class="tool-card" onclick="openModal('https://mohamedsillahkanu.github.io/fuzzy-mfl-dhis2/', 'Fuzzy Name Matcher')">
+                <div class="tc-head">
+                    <h3>Fuzzy Name Matcher</h3>
+                </div>
+                <div class="tc-body">
+                    <p>Fuzzy logic matching tool for reconciling health facility names across MFL, DHIS2 and shapefiles.</p>
+                    <div class="tc-status"><div class="status-dot"></div> Live</div>
+                </div>
+            </div>
+            <div class="tool-card" onclick="openModal('https://mohamedsillahkanu.github.io/hf-coordinate-cleaning/', 'Coordinate Cleaner')">
+                <div class="tc-head">
+                    <h3>HF Coordinate Cleaner</h3>
+                </div>
+                <div class="tc-body">
+                    <p>Clean and validate geographic coordinates for health facilities across Sierra Leone.</p>
+                    <div class="tc-status"><div class="status-dot"></div> Live</div>
+                </div>
+            </div>
+            <div class="tool-card" onclick="openModal('https://mohamedsillahkanu.github.io/wide-to-long-format/', 'Format Converter')">
+                <div class="tc-head">
+                    <h3>Wide-to-Long Converter</h3>
+                </div>
+                <div class="tc-body">
+                    <p>Reshape datasets between wide and long tabular formats for analysis compatibility.</p>
+                    <div class="tc-status"><div class="status-dot"></div> Live</div>
+                </div>
+            </div>
+            <div class="tool-card" onclick="openModal('https://mohamedsillahkanu.github.io/reporting-rate/', 'Reporting Rate Tool')">
+                <div class="tc-head">
+                    <h3>Reporting Rate Analyser</h3>
+                </div>
+                <div class="tc-body">
+                    <p>Calculate and visualize health facility reporting rates by administrative level and period.</p>
+                    <div class="tc-status"><div class="status-dot"></div> Live</div>
+                </div>
+            </div>
+            <div class="tool-card" onclick="openModal('https://mohamedsillahkanu.github.io/geojson-to-shapefile/', 'GeoJSON Converter')">
+                <div class="tc-head">
+                    <h3>GeoJSON / Shapefile Converter</h3>
+                </div>
+                <div class="tc-body">
+                    <p>Convert between GeoJSON and Shapefile formats for GIS workflow compatibility.</p>
+                    <div class="tc-status"><div class="status-dot"></div> Live</div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -2040,19 +2174,19 @@
                 <div class="contact-detail">
                     <div class="cd-text">
                         <h5>Email</h5>
-                        <p>info@informaticsconsultancyfirm.com</p>
+                        <p>mohamed.kanu@informaticsconsultancyfirm.com</p>
                     </div>
                 </div>
                 <div class="contact-detail">
                     <div class="cd-text">
                         <h5>LinkedIn</h5>
-                        <p>linkedin.com/in/mohamed-sillah-kanu</p>
+                        <p>xxx</p>
                     </div>
                 </div>
                 <div class="contact-detail">
                     <div class="cd-text">
                         <h5>GitHub</h5>
-                        <p>github.com/mohamedsillahkanu</p>
+                        <p>xxx</p>
                     </div>
                 </div>
                 <div class="contact-detail">
