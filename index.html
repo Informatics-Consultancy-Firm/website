@@ -1584,8 +1584,9 @@
             
             <div class="gallery-filter">
                 <button class="gfilter-btn active" onclick="filterGallery('all', this)">All Projects</button>
-                
-    
+                <button class="gfilter-btn" onclick="filterGallery('health', this)">Health Analytics</button>
+                <button class="gfilter-btn" onclick="filterGallery('ml', this)">Machine Learning</button>
+                <button class="gfilter-btn" onclick="filterGallery('tool', this)">Software Tools</button>
             </div>
 
             <div class="gallery-grid">
@@ -1594,6 +1595,51 @@
                     <div class="sc-head">
                         <h3>Hypertension Management System</h3>
                     </div>
+                    <div class="sc-body">
+                        <p>Intelligent monitoring and clinical prediction platform for hypertension patients developed for Sierra Leone health facilities.</p>
+                        <div class="sc-tags"><span class="tag">Health Analytics</span><span class="tag">ML</span></div>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="gallery-item" data-cat="health ml" onclick="openModal('https://mohamedsillahkanu.github.io/Heart-Disease/', 'Cardiovascular Disease Prediction')">
+                    <div class="sc-head"><h3>Cardiovascular Disease Prediction</h3></div>
+                    <div class="sc-body"><p>ML-powered risk assessment and early detection system for CVD, supporting NMCP's integrated disease surveillance.</p><div class="sc-tags"><span class="tag">Machine Learning</span><span class="tag">Health</span></div></div>
+                </div>
+                <!-- Project 3 -->
+                <div class="gallery-item" data-cat="health ml" onclick="openModal('https://mohamedsillahkanu.github.io/Diabetes-dashboard/', 'Diabetes Analytics Platform')">
+                    <div class="sc-head"><h3>Diabetes Analytics Platform</h3></div>
+                    <div class="sc-body"><p>Comprehensive diabetes management and real-time monitoring dashboard for chronic disease surveillance.</p><div class="sc-tags"><span class="tag">Health</span><span class="tag">Dashboard</span></div></div>
+                </div>
+                <!-- Project 4 -->
+                <div class="gallery-item" data-cat="ml" onclick="openModal('https://mohamedsillahkanu.github.io/colon-cancer/', 'Colon & Lung Cancer CNN')">
+                    <div class="sc-head"><h3>Colon & Lung Cancer CNN</h3></div>
+                    <div class="sc-body"><p>Computer vision model for automated medical image classification, supporting pathology services.</p><div class="sc-tags"><span class="tag">Deep Learning</span><span class="tag">CNN</span></div></div>
+                </div>
+                <!-- Project 5 -->
+                <div class="gallery-item" data-cat="tool" onclick="openModal('https://mohamedsillahkanu.github.io/costing-tool/', 'SNT Costing Tool')">
+                    <div class="sc-head"><h3>SNT Costing Calculator</h3></div>
+                    <div class="sc-body"><p>National malaria intervention costing and planning tool developed for NMCP Sierra Leone.</p><div class="sc-tags"><span class="tag">Software Tool</span><span class="tag">Malaria</span></div></div>
+                </div>
+                <!-- Project 6 -->
+                <div class="gallery-item" data-cat="tool" onclick="openModal('https://mohamedsillahkanu.github.io/sl-nmcp-data-analysis-training-plan/', 'Data Analytics Training')">
+                    <div class="sc-head"><h3>Data Analytics Training in R & Python</h3></div>
+                    <div class="sc-body"><p>Comprehensive NMCP training plan for data analysis, building local capacity in health informatics.</p><div class="sc-tags"><span class="tag">Education</span><span class="tag">R/Python</span></div></div>
+                </div>
+                <!-- Project 7 -->
+                <div class="gallery-item" data-cat="health" onclick="openModal('https://mohamedsillahkanu.github.io/tpr/', 'Test Positivity Rate')">
+                    <div class="sc-head"><h3>Test Positivity Rate Analysis</h3></div>
+                    <div class="sc-body"><p>Malaria test positivity rate computation and geospatial visualization for NMCP surveillance.</p><div class="sc-tags"><span class="tag">Epidemiology</span><span class="tag">Malaria</span></div></div>
+                </div>
+                <!-- Project 8 -->
+                <div class="gallery-item" data-cat="health" onclick="openModal('https://mohamedsillahkanu.github.io/crude-incidence/', 'Crude Incidence Tool')">
+                    <div class="sc-head"><h3>Crude Incidence Calculator</h3></div>
+                    <div class="sc-body"><p>Epidemiological incidence rate computation and trend analysis for disease surveillance.</p><div class="sc-tags"><span class="tag">Epi</span><span class="tag">Calculator</span></div></div>
+                </div>
+                <!-- Project 9 -->
+                <div class="gallery-item" data-cat="health" onclick="openModal('https://mohamedsillahkanu.github.io/heatmap/', 'Reporting Matrix Heatmap')">
+                    <div class="sc-head"><h3>Reporting Matrix & Heatmap</h3></div>
+                    <div class="sc-body"><p>DHIS2 reporting completeness visualization across facilities, improving data quality monitoring.</p><div class="sc-tags"><span class="tag">Reporting</span><span class="tag">DHIS2</span></div></div>
+                </div>
             </div>
         </div>
 
@@ -1942,133 +1988,8 @@
             </div>
         </div>
         
-        <div class="images-simple-grid">
-            <!-- CEO Image -->
-            <div class="image-card">
-                <div class="image-container">
-                    <img src="ceo.jpg" alt="Chief Executive Officer (CEO)">
-                </div>
-                <div class="image-info">
-                    <h4>Chief Executive Officer (CEO)</h4>
-                    <p>Mohamed Sillah Kanu</p>
-                </div>
-            </div>
-            
-            <!-- Project Images -->
-            <div class="image-card">
-                <div class="image-container">
-                    <img src="1348.jpg" alt="International Relations and Policy Advisor">
-                </div>
-                <div class="image-info">
-                    <h4>International Relations and Policy Advisor</h4>
-                    <p>Ramatulai Jalloh</p>
-                </div>
-            </div>
-            <div class="image-card">
-                <div class="image-container">
-                    <img src="project-02.png" alt="GIS Mapping Project">
-                </div>
-                <div class="image-info">
-                    <h4>GIS Mapping Project</h4>
-                    <p>Geospatial analysis for health facilities in Sierra Leone</p>
-                </div>
-            </div>
-            <div class="image-card">
-                <div class="image-container">
-                    <img src="project-03.png" alt="ML Model Development">
-                </div>
-                <div class="image-info">
-                    <h4>ML Model Development</h4>
-                    <p>Predictive analytics for malaria surveillance</p>
-                </div>
-            </div>
-            
-            <!-- Team Images -->
-            <div class="image-card">
-                <div class="image-container">
-                    <img src="team-01.png" alt="Data Science Team">
-                </div>
-                <div class="image-info">
-                    <h4>Data Science Team</h4>
-                    <p>Our expert analysts at work in Freetown</p>
-                </div>
-            </div>
-            <div class="image-card">
-                <div class="image-container">
-                    <img src="team-02.png" alt="Leadership Meeting">
-                </div>
-                <div class="image-info">
-                    <h4>Leadership Meeting</h4>
-                    <p>Strategic planning session with health partners</p>
-                </div>
-            </div>
-            <div class="image-card">
-                <div class="image-container">
-                    <img src="team-03.png" alt="Training Workshop">
-                </div>
-                <div class="image-info">
-                    <h4>Training Workshop</h4>
-                    <p>R and Python training for NMCP data managers</p>
-                </div>
-            </div>
-            
-            <!-- Events Images -->
-            <div class="image-card">
-                <div class="image-container">
-                    <img src="event-01.png" alt="Health Conference 2024">
-                </div>
-                <div class="image-info">
-                    <h4>Health Conference 2024</h4>
-                    <p>Presenting malaria analytics at national forum</p>
-                </div>
-            </div>
-            <div class="image-card">
-                <div class="image-container">
-                    <img src="event-02.png" alt="Data Science Summit">
-                </div>
-                <div class="image-info">
-                    <h4>Data Science Summit</h4>
-                    <p>West Africa analytics forum, Freetown 2024</p>
-                </div>
-            </div>
-            <div class="image-card">
-                <div class="image-container">
-                    <img src="event-03.png" alt="Project Launch">
-                </div>
-                <div class="image-info">
-                    <h4>Project Launch</h4>
-                    <p>New dashboard presentation for NMCP</p>
-                </div>
-            </div>
-            
-            <!-- Office Images -->
-            <div class="image-card">
-                <div class="image-container">
-                    <img src="office-01.png" alt="ICF Office Freetown">
-                </div>
-                <div class="image-info">
-                    <h4>ICF Office Freetown</h4>
-                    <p>Our headquarters since 2023</p>
-                </div>
-            </div>
-            <div class="image-card">
-                <div class="image-container">
-                    <img src="office-02.png" alt="Analysis Lab">
-                </div>
-                <div class="image-info">
-                    <h4>Analysis Lab</h4>
-                    <p>Data science workstation area</p>
-                </div>
-            </div>
-            <div class="image-card">
-                <div class="image-container">
-                    <img src="office-03.png" alt="Conference Room">
-                </div>
-                <div class="image-info">
-                    <h4>Conference Room</h4>
-                    <p>Client meeting and presentation space</p>
-                </div>
-            </div>
+        <div style="text-align: center; padding: 2rem; background: #f8f9fa; border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+            <p style="font-size: 1rem; color: var(--muted);">Image gallery coming soon. Check back for photos from our field implementations and team activities.</p>
         </div>
     </div>
 </div>
@@ -2082,79 +2003,10 @@
                 <p>Open-source and custom digital health tools for malaria and health programs</p>
             </div>
         </div>
-        <div class="tools-grid">
-            <div class="tool-card" onclick="openModal('https://mohamedsillahkanu.github.io/dataset-download/', 'DHIS2 Data Extractor')">
-                <div class="tc-head">
-                    <h3>DHIS2 Data Extractor</h3>
-                </div>
-                <div class="tc-body">
-                    <p>Extract routine health data from DHIS2 systems with customizable filters and output formats for NMCP analysis.</p>
-                    <div class="tc-status"><div class="status-dot"></div> Live</div>
-                </div>
-            </div>
-            <div class="tool-card" onclick="openModal('https://mohamedsillahkanu.github.io/combine-files/', 'File Combiner Tool')">
-                <div class="tc-head">
-                    <h3>File Combiner</h3>
-                </div>
-                <div class="tc-body">
-                    <p>Merge and combine multiple data files into a single consolidated dataset for health program analysis.</p>
-                    <div class="tc-status"><div class="status-dot"></div> Live</div>
-                </div>
-            </div>
-            <div class="tool-card" onclick="openModal('https://mohamedsillahkanu.github.io/outlier/', 'Outlier Detection Tool')">
-                <div class="tc-head">
-                    <h3>Outlier Detection</h3>
-                </div>
-                <div class="tc-body">
-                    <p>Statistical outlier identification and handling for DHIS2 routine data quality assurance.</p>
-                    <div class="tc-status"><div class="status-dot"></div> Live</div>
-                </div>
-            </div>
-            <div class="tool-card" onclick="openModal('https://mohamedsillahkanu.github.io/fuzzy-mfl-dhis2/', 'Fuzzy Name Matcher')">
-                <div class="tc-head">
-                    <h3>Fuzzy Name Matcher</h3>
-                </div>
-                <div class="tc-body">
-                    <p>Fuzzy logic matching tool for reconciling health facility names across MFL, DHIS2 and shapefiles.</p>
-                    <div class="tc-status"><div class="status-dot"></div> Live</div>
-                </div>
-            </div>
-            <div class="tool-card" onclick="openModal('https://mohamedsillahkanu.github.io/hf-coordinate-cleaning/', 'Coordinate Cleaner')">
-                <div class="tc-head">
-                    <h3>HF Coordinate Cleaner</h3>
-                </div>
-                <div class="tc-body">
-                    <p>Clean and validate geographic coordinates for health facilities across Sierra Leone.</p>
-                    <div class="tc-status"><div class="status-dot"></div> Live</div>
-                </div>
-            </div>
-            <div class="tool-card" onclick="openModal('https://mohamedsillahkanu.github.io/wide-to-long-format/', 'Format Converter')">
-                <div class="tc-head">
-                    <h3>Wide-to-Long Converter</h3>
-                </div>
-                <div class="tc-body">
-                    <p>Reshape datasets between wide and long tabular formats for analysis compatibility.</p>
-                    <div class="tc-status"><div class="status-dot"></div> Live</div>
-                </div>
-            </div>
-            <div class="tool-card" onclick="openModal('https://mohamedsillahkanu.github.io/reporting-rate/', 'Reporting Rate Tool')">
-                <div class="tc-head">
-                    <h3>Reporting Rate Analyser</h3>
-                </div>
-                <div class="tc-body">
-                    <p>Calculate and visualize health facility reporting rates by administrative level and period.</p>
-                    <div class="tc-status"><div class="status-dot"></div> Live</div>
-                </div>
-            </div>
-            <div class="tool-card" onclick="openModal('https://mohamedsillahkanu.github.io/geojson-to-shapefile/', 'GeoJSON Converter')">
-                <div class="tc-head">
-                    <h3>GeoJSON / Shapefile Converter</h3>
-                </div>
-                <div class="tc-body">
-                    <p>Convert between GeoJSON and Shapefile formats for GIS workflow compatibility.</p>
-                    <div class="tc-status"><div class="status-dot"></div> Live</div>
-                </div>
-            </div>
+
+        <div style="text-align: center; padding: 3rem 2rem; background: linear-gradient(135deg, #f8f9fa 0%, #e7f3ff 100%); border-radius: 8px; border: 2px solid var(--border);">
+            <p style="font-size: 1.1rem; color: var(--primary-blue); font-weight: 600; margin-bottom: 1rem;">Software Tools Section Coming Soon</p>
+            <p style="font-size: 1rem; color: var(--muted); line-height: 1.8;">Please share the list of software tools with their URLs, and we'll add them to this section. Include tool names, descriptions, and direct links.</p>
         </div>
     </div>
 </div>
